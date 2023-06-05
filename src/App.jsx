@@ -1,15 +1,10 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
 import './App.css'
 import Board from './components/board/board'
 
-
-
 function App() {
-  
-
-  return (
+    return (
     <div className='app'>
       <div className='app_navbar'>
         <h2>Kanban Board</h2>
