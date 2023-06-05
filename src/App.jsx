@@ -1,14 +1,23 @@
-
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
 import './App.css'
-import Main from './components/Main'
-
+import Board from './components/board/board'
 
 function App() {
-  
-
-  return (
+    return (
     <div className='app'>
-    <Main/>   
+      <div className='app_navbar'>
+        <h2>Kanban Board</h2>
+      </div>
+      <div className='app_outer'>
+        <div className='app_boards'>
+           <Board/>
+           <Board/>
+           <Board/>
+           {/* <Board/>
+           <Board/> */}
+        </div>
+      </div>
     </div>
   )
 }
