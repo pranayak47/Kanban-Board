@@ -11,5 +11,5 @@ This react vite is faster than the usual c-r-a , also error efficient and wecan 
 <li>Pranay Kumar </li>
 <li>vaishnavi Chatur<a href="https://github.com/VaishnaviChatur">https://github.com/VaishnaviChatur</a></li>
 <li>karishma Sahu</li>
-    <li>Shriram kakde<a></a></li>
+    <li>Shriram kakde<a href="https://github.com/shriramk18">https://github.com/shriramk18</a></li>
 </ol>
