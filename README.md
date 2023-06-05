@@ -36,7 +36,7 @@ To install and run the application locally, follow these steps:
 <li>Pranay Kumar (Roll.No-Fn-Tec-27gbs) <a href="https://github.com/pranayak47/"> https://github.com/pranayak47</a> </li>
 <li>vaishnavi Chatur(Roll No:fn-tec-33EIU)<a href="https://github.com/VaishnaviChatur"> https://github.com/VaishnaviChatur</a></li>
 <li>karishma Sahu(fn-tec-92AWZ) <a href="https://github.com/sahukarishma21"> https://github.com/sahukarishma21</a></li>
- <li>Shriram kakde(fn-tec-24OJI)<a href="https://github.com/shriramk18">https://github.com/shriramk18</a></li>
+ <li>Shriram kakde(fn-tec-24OJI)<a href="https://github.com/shriramk18"> https://github.com/shriramk18</a></li>
 </ol>
   <h1>Deployment Link </h1>
   <h1>Acknowledgment</h1>
