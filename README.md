@@ -1,5 +1,5 @@
 # Kanban-Board
-We can handle our tasks easily using this kanban board
+A Kanban board is a visual project management tool that helps teams track and manage work effectively. It is based on the principles of the Kanban method, which originated in the manufacturing industry but has since been adopted by software development teams and other knowledge-based projects.
 # What it does
 It will help us manage our tasks easily and do team work efficiently
 # Initialisation
@@ -33,10 +33,10 @@ To install and run the application locally, follow these steps:
 </ul>
   <h1>Collaborators</h1>
  <ol>
-<li>Pranay Kumar <a href="https://github.com/pranayak47/"> https://github.com/pranayak47</a> </li>
-<li>vaishnavi Chatur<a href="https://github.com/VaishnaviChatur"> https://github.com/VaishnaviChatur</a></li>
-<li>karishma Sahu <a href="https://github.com/sahukarishma21"> https://github.com/sahukarishma21</a></li>
- <li>Shriram kakde<a href="https://github.com/shriramk18">https://github.com/shriramk18</a></li>
+<li>Pranay Kumar (Roll.No-Fn-Tec-27gbs) <a href="https://github.com/pranayak47/"> https://github.com/pranayak47</a> </li>
+<li>vaishnavi Chatur(Roll No:fn-tec-33EIU)<a href="https://github.com/VaishnaviChatur"> https://github.com/VaishnaviChatur</a></li>
+<li>karishma Sahu(fn-tec-92AWZ) <a href="https://github.com/sahukarishma21"> https://github.com/sahukarishma21</a></li>
+ <li>Shriram kakde(fn-tec-24OJI)<a href="https://github.com/shriramk18">https://github.com/shriramk18</a></li>
 </ol>
   <h1>Deployment Link </h1>
   <h1>Acknowledgment</h1>
