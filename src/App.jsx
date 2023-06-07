@@ -4,19 +4,27 @@ import Board from "./Components/Board/Board";
 
 import "./App.css";
 import Editable from "./Components/Editabled/Editable";
-import a from './Components/images/a.png';
-import b from './Components/images/b.png';
-import c from './Components/images/c.png';
-import d from './Components/images/d.png';
-import e from './Components/images/e.png';
-import f from './Components/images/f.png';
+import a from './Components/images/a.jpg';
+import b from './Components/images/b.jpg';
+import c from './Components/images/c.jpg';
+import d from './Components/images/d.jpg';
+ import e from './Components/images/e.jpg';
+
 function App() {
 //for background
-const [collapsed, setCollapsed] = React.useState(false);
-const backgroundImages = [a, b, c,d, e,f];
-const handleCollapse = () => {
-  setCollapsed(!collapsed);
+
+const [Theme, setTheme] = useState(0);
+ 
+const backgroundImages = [a, b, c,d,e];
+
+const changeTheme = () => {
+  if (backgroundImages.length - 1 > Theme) {
+    setTheme(Theme + 1);
+  } else {
+    setTheme(0);
+  }
 };
+////////////////////////////////////
 
   const [boards, setBoards] = useState(
     JSON.parse(localStorage.getItem("prac-kanban")) || []
@@ -133,13 +141,13 @@ const handleCollapse = () => {
   }, [boards]);
 
   return (
-    <div className="app">
-      <div className="app_nav">
-     
-        <Navbar/>
-      </div>
-      <div className="app_boards_container">
-        <div className="app_boards">
+    <div className="app" > 
+  
+    
+        <Navbar changeTheme={changeTheme}/>
+       
+      <div className="app_boards_container"   style={{ backgroundImage: `url(${backgroundImages[Theme]})` }}>
+        <div className="app_boards"  >
           {boards.map((item) => (
             <Board
               key={item.id}

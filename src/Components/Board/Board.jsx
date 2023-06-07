@@ -10,12 +10,13 @@ import "./Board.css";
 function Board(props) {
     const [showDropdown, setShowDropdown] = useState(false);
 
-    return ( <div className = "board" >
-        <div className = "board_header" >
-        <p className = "board_header_title" > { props.board?.title} 
+    return ( 
+    <div className = "board">
+        <div className = "board_header">
+        <p className = "board_header_title"> { props.board?.title} 
         <span> { props.board ?.cards?.length || 0 } </span> </p> 
         <div className = "board_header_title_more" onClick = {() => setShowDropdown(true) }>
-        <MoreHorizontal /> 
+        <MoreHorizontal/> 
         {
             showDropdown && ( <
                 Dropdown class = "board_dropdown"
