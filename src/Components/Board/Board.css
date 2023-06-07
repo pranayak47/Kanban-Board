@@ -21,6 +21,8 @@
     display: flex;
     gap: 5px;
     align-items: center;
+    color: #f8f8f8;
+    background-color: black;
 }
 
 .board_header_title span {
