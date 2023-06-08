@@ -147,7 +147,7 @@ const changeTheme = () => {
         <Navbar changeTheme={changeTheme}/>
        
       <div className="app_boards_container"   style={{ backgroundImage: `url(${backgroundImages[Theme]})` }}>
-        <div className="app_boards"  >
+        <div className="app_boards">
           {boards.map((item) => (
             <Board
               key={item.id}

@@ -16,19 +16,23 @@ function Board(props) {
         <p className = "board_header_title"> { props.board?.title} 
         <span> { props.board ?.cards?.length || 0 } </span> </p> 
         <div className = "board_header_title_more" onClick = {() => setShowDropdown(true) }>
-        <MoreHorizontal/> 
+        <MoreHorizontal style={{backgroundColor:"white", borderRadius:'50%', margin:'10px'}}/> 
         {
-            showDropdown && ( <
-                Dropdown class = "board_dropdown"
+            showDropdown && ( 
+                <Dropdown class = "board_dropdown"
                 onClose = {
                     () => setShowDropdown(false) } >
                 <p onClick = {
                     () => props.removeBoard() } > Delete Board </p> </Dropdown>
             )
-        } </div> </div> <div className = "board_cards custom-scroll">
+        } 
+        </div>
+         </div> 
+        
+        <div className = "board_cards custom-scroll">
              {
-            props.board ?.cards?.map((item) => ( <
-                Card key = { item.id }
+            props.board ?.cards?.map((item) => ( 
+                <Card key = { item.id }
                 card = { item }
                 boardId = { props.board.id }
                 removeCard = { props.removeCard }

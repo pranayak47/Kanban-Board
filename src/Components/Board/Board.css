@@ -1,18 +1,21 @@
 .board {
     min-width: 290px;
     width: 290px;
-    max-height: 100%;
+    max-height: fit-content;
     flex-basis: 290px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* background-color: aqua; */
+    /* background-color: #ffffff; */
+    /* opacity: 0.2; */
 }
 
 .board_header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff;
+    border-radius: 7px;
 }
 
 .board_header_title {
@@ -20,9 +23,11 @@
     font-size: 1rem;
     display: flex;
     gap: 5px;
+    /* text-align: center; */
+    margin-left: 20px;
     align-items: center;
-    color: #f8f8f8;
-    background-color: black;
+    /* color: #f8f8f8; */
+    /* background-color: black; */
 }
 
 .board_header_title span {
@@ -39,6 +44,7 @@
     padding: 20px;
     width: 150px !important;
     cursor: default;
+    background-color: #fff;
 }
 
 .board_dropdown p {

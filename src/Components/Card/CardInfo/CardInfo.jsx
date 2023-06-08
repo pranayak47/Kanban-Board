@@ -8,24 +8,18 @@ import {
   Type,
   X,
 } from "react-feather";
-
+// import EditIcon from '@mui/icons-material/Edit';
 import Modal from "../../Modal/Modal";
+// import Modal from "../../Modal/Modal";
 import Editable from "../../Editabled/Editable";
+import ClearIcon from '@mui/icons-material/Clear';
 
 import "./CardInfo.css";
 
 function CardInfo(props) {
-  const colors = [
-    "#a8193d",
-    "#4fcc25",
-    "#1ebffa",
-    "#8da377",
-    "#9975bd",
-    "#cf61a1",
-    "#240959",
-  ];
+ 
 
-  const [selectedColor, setSelectedColor] = useState();
+  
   const [values, setValues] = useState({
     ...props.card,
   });
@@ -38,75 +32,54 @@ function CardInfo(props) {
     setValues({ ...values, desc: value });
   };
 
-  const addLabel = (label) => {
-    const index = values.labels.findIndex((item) => item.text === label.text);
-    if (index > -1) return;
+  
 
-    setSelectedColor("");
-    setValues({
-      ...values,
-      labels: [...values.labels, label],
-    });
-  };
+  // const addTask = (value) => {
+  //   const task = {
+  //     id: Date.now() + Math.random() * 2,
+  //     completed: false,
+  //     text: value,
+  //   };
+  //   setValues({
+  //     ...values,
+  //     tasks: [...values.tasks, task],
+  //   });
+  // };
 
-  const removeLabel = (label) => {
-    const tempLabels = values.labels.filter((item) => item.text !== label.text);
+  // const removeTask = (id) => {
+  //   const tasks = [...values.tasks];
 
-    setValues({
-      ...values,
-      labels: tempLabels,
-    });
-  };
+  //   const tempTasks = tasks.filter((item) => item.id !== id);
+  //   setValues({
+  //     ...values,
+  //     tasks: tempTasks,
+  //   });
+  // };
 
-  const addTask = (value) => {
-    const task = {
-      id: Date.now() + Math.random() * 2,
-      completed: false,
-      text: value,
-    };
-    setValues({
-      ...values,
-      tasks: [...values.tasks, task],
-    });
-  };
+  // const updateTask = (id, value) => {
+  //   const tasks = [...values.tasks];
 
-  const removeTask = (id) => {
-    const tasks = [...values.tasks];
+  //   const index = tasks.findIndex((item) => item.id === id);
+  //   if (index < 0) return;
 
-    const tempTasks = tasks.filter((item) => item.id !== id);
-    setValues({
-      ...values,
-      tasks: tempTasks,
-    });
-  };
+  //   tasks[index].completed = value;
 
-  const updateTask = (id, value) => {
-    const tasks = [...values.tasks];
+  //   setValues({
+  //     ...values,
+  //     tasks,
+  //   });
+  // };
 
-    const index = tasks.findIndex((item) => item.id === id);
-    if (index < 0) return;
-
-    tasks[index].completed = value;
-
-    setValues({
-      ...values,
-      tasks,
-    });
-  };
-
-  const calculatePercent = () => {
-    if (!values.tasks?.length) return 0;
-    const completed = values.tasks?.filter((item) => item.completed)?.length;
-    return (completed / values.tasks?.length) * 100;
-  };
+  // const calculatePercent = () => {
+  //   if (!values.tasks?.length) return 0;
+  //   const completed = values.tasks?.filter((item) => item.completed)?.length;
+  //   return (completed / values.tasks?.length) * 100;
+  // };
 
   const updateDate = (date) => {
     if (!date) return;
 
-    setValues({
-      ...values,
-      date,
-    });
+    setValues({...values,date,});
   };
 
   useEffect(() => {
@@ -117,22 +90,28 @@ function CardInfo(props) {
     <Modal onClose={props.onClose}>
       <div className="cardinfo">
         <div className="cardinfo_box">
+        <ClearIcon style={{marginLeft:'450px',color:'red'}}   onClick={() => (props.onClose ? props.onClose() : "")}/>
           <div className="cardinfo_box_title">
-            <Type />
-            <p>Title</p>
+          
+            <p> you are in </p>
+        
           </div>
+      
           <Editable
             defaultValue={values.title}
             text={values.title}
             placeholder="Enter Title"
             onSubmit={updateTitle}
+          
           />
+        
+          {/* <Type  onSubmit={updateTitle}/> */}
         </div>
 
         <div className="cardinfo_box">
           <div className="cardinfo_box_title">
-            <List />
-            <p>Description</p>
+
+            <p><List /> Description</p>
           </div>
           <Editable
             defaultValue={values.desc}
@@ -144,8 +123,8 @@ function CardInfo(props) {
 
         <div className="cardinfo_box">
           <div className="cardinfo_box_title">
-            <Calendar />
-            <p>Date</p>
+        
+            <p><Calendar /> Date</p>
           </div>
           <input
             type="date"
@@ -155,45 +134,12 @@ function CardInfo(props) {
           />
         </div>
 
-        <div className="cardinfo_box">
-          <div className="cardinfo_box_title">
-            <Tag />
-            <p>Labels</p>
-          </div>
-          <div className="cardinfo_box_labels">
-            {values.labels?.map((item, index) => (
-              <label
-                key={index}
-                style={{ backgroundColor: item.color, color: "#fff" }}
-              >
-                {item.text}
-                <X onClick={() => removeLabel(item)} />
-              </label>
-            ))}
-          </div>
-          <ul>
-            {colors.map((item, index) => (
-              <li
-                key={index + item}
-                style={{ backgroundColor: item }}
-                className={selectedColor === item ? "li_active" : ""}
-                onClick={() => setSelectedColor(item)}
-              />
-            ))}
-          </ul>
-          <Editable
-            text="Add Label"
-            placeholder="Enter label text"
-            onSubmit={(value) =>
-              addLabel({ color: selectedColor, text: value })
-            }
-          />
-        </div>
+   
 
-        <div className="cardinfo_box">
+        {/* <div className="cardinfo_box">
           <div className="cardinfo_box_title">
-            <CheckSquare />
-            <p>Tasks</p>
+          
+            <p><CheckSquare/> Tasks</p>
           </div>
           <div className="cardinfo_box_progress-bar">
             <div
@@ -224,9 +170,9 @@ function CardInfo(props) {
             placeholder="Enter task"
             onSubmit={addTask}
           />
-        </div>
-      </div>
-    </Modal>
+                </div>*/}
+      </div> 
+  </Modal>
   );
 }
 

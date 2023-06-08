@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { CheckSquare, Clock, MoreHorizontal } from "react-feather";
+import EditIcon from '@mui/icons-material/Edit';
 
-import Dropdown from "../Dropdown/Dropdown";
-
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import "./Card.css";
 import CardInfo from "./CardInfo/CardInfo";
 
@@ -52,8 +52,9 @@ function Card(props) {
         draggable
         onDragEnd={() => props.dragEnded(props.boardId, id)}
         onDragEnter={() => props.dragEntered(props.boardId, id)}
-        onClick={() => setShowModal(true)}
+        // onClick={() => setShowModal(true)}
       >
+    
         <div className="card_top">
           <div className="card_top_labels">
             {labels?.map((item, index) => (
@@ -69,17 +70,10 @@ function Card(props) {
               setShowDropdown(true);
             }}
           >
-            <MoreHorizontal />
-            {showDropdown && (
-              <Dropdown
-                class="board_dropdown"
-                onClose={() => setShowDropdown(false)}
-              >
-                <p onClick={() => props.removeCard(props.boardId, id)}>
-                  Delete Card
-                </p>
-              </Dropdown>
-            )}
+            <EditIcon style={{color:'blue'}}  onClick={() => setShowModal(true)}/>
+       
+           < DeleteForeverIcon style={{color:'red'}} onClick={() => props.removeCard(props.boardId, id)}/>
+         
           </div>
         </div>
         <div className="card_title">{title}</div>
@@ -90,12 +84,12 @@ function Card(props) {
               {formatDate(date)}
             </p>
           )}
-          {tasks && tasks?.length > 0 && (
+          {/* {tasks && tasks?.length > 0 && (
             <p className="card_footer_item">
               <CheckSquare className="card_footer_icon" />
               {tasks?.filter((item) => item.completed)?.length}/{tasks?.length}
             </p>
-          )}
+          )} */}
         </div>
       </div>
     </>
