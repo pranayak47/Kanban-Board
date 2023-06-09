@@ -1,12 +1,13 @@
 .board {
     min-width: 290px;
     width: 290px;
-    max-height: fit-content;
+    height: fit-content;
     flex-basis: 290px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* background-color: #ffffff; */
+    background-color: #ffffff;
+    border-radius: 30px;
     /* opacity: 0.2; */
 }
 
@@ -53,12 +54,13 @@
 }
 
 .board_cards {
-    background-color: #f8f8f8;
+    background-color: aqua;
+    /* background-color: #f8f8f8; */
     padding: 10px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
     overflow-y: auto;
 }
 

@@ -19,7 +19,8 @@ import "./CardInfo.css";
 function CardInfo(props) {
  
 
-  
+// const [isTitle, setTitle] = useState()
+
   const [values, setValues] = useState({
     ...props.card,
   });
@@ -85,7 +86,7 @@ function CardInfo(props) {
   useEffect(() => {
     if (props.updateCard) props.updateCard(props.boardId, values.id, values);
   }, [values]);
-
+  // console.log(props.board?.title)
   return (
     <Modal onClose={props.onClose}>
       <div className="cardinfo">
@@ -93,8 +94,8 @@ function CardInfo(props) {
         <ClearIcon style={{marginLeft:'450px',color:'red'}}   onClick={() => (props.onClose ? props.onClose() : "")}/>
           <div className="cardinfo_box_title">
           
-            <p> you are in </p>
-        
+            <p> In the list <span style={{textDecoration:'underline', fontSize:'1rem'}}>{props.boardTitle}</span></p>
+      
           </div>
       
           <Editable
@@ -118,6 +119,7 @@ function CardInfo(props) {
             text={values.desc || "Add a Description"}
             placeholder="Enter description"
             onSubmit={updateDesc}
+    
           />
         </div>
 
